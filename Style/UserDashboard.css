@@ -1,0 +1,291 @@
+﻿/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Admin Header Styling */
+.admin-header {
+    background-color: orange;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+/* Admin Info */
+.admin-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-profile-img {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.logout-btn {
+    margin-left: 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 200px;
+    background: #222;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background: #333;
+    border-radius: 5px;
+}
+
+/* Settings Dropdown */
+.settings {
+    margin-top: 10px;
+}
+
+.settings a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown {
+    display: none;
+    background: #333;
+    padding: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.dropdown a {
+    padding: 8px 15px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.dropdown a:hover {
+    background: #444;
+}
+
+.settings .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.settings.open .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 200px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    margin-top: 60px;
+}
+
+/* Footer Styles */
+footer {
+    background: #2E8B57;
+    color: white;
+    padding: 15px;
+    font-size: 13px;
+    width: calc(100% - 200px);
+    left: 200px;
+    position: relative;
+    bottom: 0;
+    transition: width 0.3s;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 5px;
+    min-width: 220px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid white;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.footer-section p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.footer-section .social-icons a {
+    color: white;
+    font-size: 14px;
+    margin: 0 3px;
+    transition: 0.3s;
+}
+
+.footer-section .social-icons a:hover {
+    color: #222;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid white;
+    font-size: 11px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 180px;
+    }
+    
+    .main-content {
+        margin-left: 180px;
+    }
+    
+    footer {
+        width: calc(100% - 180px);
+        left: 180px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .admin-header {
+        padding: 10px;
+        font-size: medium;
+    }
+
+    .admin-profile-img {
+        width: 35px;
+        height: 35px;
+    }
+
+    footer {
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .admin-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .admin-info {
+        margin-top: 5px;
+    }
+
+    .logout-btn {
+        padding: 4px 8px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
